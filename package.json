@@ -1,0 +1,32 @@
+{
+  "name": "eslint-plugin-todo-ticket",
+  "version": "0.0.1",
+  "description": "This is a rule to encourage the entry of ticket URLs with TODO comments.",
+  "main": "dist/index.js",
+  "types": "./src/index.ts",
+  "scripts": {
+    "build": "tsup src/index.ts",
+    "test": "tsx ./test/rule.test.ts",
+    "test:watch": "tsx watch ./test/rule.test.ts"
+  },
+  "author": "ToyB0x",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ToyB0x/eslint-plugin-todo-ticket/issues"
+  },
+  "homepage": "https://github.com/ToyB0x/eslint-plugin-todo-ticket",
+  "volta": {
+    "node": "18.16.0",
+    "yarn": "1.22.19"
+  },
+  "packageManager": "yarn@1.22.19",
+  "devDependencies": {
+    "@typescript-eslint/parser": "^5.59.11",
+    "@typescript-eslint/utils": "^5.59.11",
+    "eslint": "^8.42.0",
+    "prettier": "2.8.8",
+    "tsup": "^6.7.0",
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.3"
+  }
+}
