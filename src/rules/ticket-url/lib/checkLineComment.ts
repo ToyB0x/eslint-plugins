@@ -10,7 +10,7 @@ export const checkLineComment = (
 ) => {
   comments.forEach((comment) => {
     if (comment.type !== 'Line') return
-    if (!comment.value.includes('TODO:')) return
+    if (!comment.value.toLowerCase().includes('todo:')) return
 
     // check if comment has "TODO:" and not has next comment line (possibly contains ticket url)
     if (!hasNextCommentLine(comment, comments)) {

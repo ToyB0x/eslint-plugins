@@ -10,7 +10,7 @@ export const checkBlockComments = (
 
     // check if comment has "TODO:" and not has "https://"
     if (
-      comment.value.includes('TODO:') &&
+      comment.value.toLowerCase().includes('todo:') &&
       !comment.value.includes('https://')
     ) {
       context.report({
