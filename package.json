@@ -7,7 +7,8 @@
   "scripts": {
     "build": "tsup src/index.ts",
     "test": "tsx ./test/rule.test.ts",
-    "test:watch": "tsx watch ./test/rule.test.ts"
+    "test:watch": "tsx watch ./test/rule.test.ts",
+    "typecheck": "tsc --noEmit"
   },
   "author": "ToyB0x",
   "license": "MIT",
