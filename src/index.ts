@@ -1,5 +1,5 @@
 module.exports = {
   rules: {
-    'todo-ticket': require('./rules/todo-ticket').rule,
+    'ticket-url': require('./rules/ticket-url').rule,
   },
 }
