@@ -8,7 +8,8 @@
     "build": "tsup src/index.ts",
     "test": "tsx ./test/rule.test.ts",
     "test:watch": "tsx watch ./test/rule.test.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "release": "shipjs prepare"
   },
   "author": "ToyB0x",
   "license": "MIT",
@@ -27,6 +28,7 @@
     "@typescript-eslint/utils": "^5.59.11",
     "eslint": "^8.42.0",
     "prettier": "2.8.8",
+    "shipjs": "0.26.3",
     "tsup": "^6.7.0",
     "tsx": "^3.12.7",
     "typescript": "^5.1.3"
