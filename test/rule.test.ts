@@ -1,11 +1,11 @@
 import { ESLintUtils } from '@typescript-eslint/utils'
-import { rule } from '../src/rules/todo-ticket'
+import { rule } from '../src/rules/ticket-url'
 
 const ruleTester = new ESLintUtils.RuleTester({
   parser: '@typescript-eslint/parser',
 })
 
-ruleTester.run('rule: todo-ticket', rule, {
+ruleTester.run('rule: ticket-url', rule, {
   valid: [
     {
       name: 'line comment',
@@ -113,7 +113,7 @@ ruleTester.run('rule: todo-ticket', rule, {
         `,
       errors: [
         {
-          messageId: 'add-ticket-url',
+          messageId: 'no-next-comment-line',
         },
       ],
     },
@@ -126,7 +126,7 @@ ruleTester.run('rule: todo-ticket', rule, {
         `,
       errors: [
         {
-          messageId: 'add-ticket-url',
+          messageId: 'no-ticket-url-in-continuous-comment-line',
         },
       ],
     },
@@ -141,7 +141,7 @@ ruleTester.run('rule: todo-ticket', rule, {
         `,
       errors: [
         {
-          messageId: 'add-ticket-url',
+          messageId: 'no-ticket-url-in-block-comment',
         },
       ],
     },
@@ -159,13 +159,13 @@ ruleTester.run('rule: todo-ticket', rule, {
         `,
       errors: [
         {
-          messageId: 'add-ticket-url',
+          messageId: 'no-next-comment-line',
         },
         {
-          messageId: 'add-ticket-url',
+          messageId: 'no-next-comment-line',
         },
         {
-          messageId: 'add-ticket-url',
+          messageId: 'no-next-comment-line',
         },
       ],
     },
@@ -185,7 +185,7 @@ ruleTester.run('rule: todo-ticket', rule, {
         `,
       errors: [
         {
-          messageId: 'add-ticket-url',
+          messageId: 'no-next-comment-line',
         },
       ],
     },
@@ -209,13 +209,13 @@ ruleTester.run('rule: todo-ticket', rule, {
         `,
       errors: [
         {
-          messageId: 'add-ticket-url',
+          messageId: 'no-ticket-url-in-block-comment',
         },
         {
-          messageId: 'add-ticket-url',
+          messageId: 'no-ticket-url-in-block-comment',
         },
         {
-          messageId: 'add-ticket-url',
+          messageId: 'no-ticket-url-in-block-comment',
         },
       ],
     },
@@ -241,7 +241,7 @@ ruleTester.run('rule: todo-ticket', rule, {
         `,
       errors: [
         {
-          messageId: 'add-ticket-url',
+          messageId: 'no-ticket-url-in-block-comment',
         },
       ],
     },
@@ -263,13 +263,13 @@ ruleTester.run('rule: todo-ticket', rule, {
         `,
       errors: [
         {
-          messageId: 'add-ticket-url',
+          messageId: 'no-ticket-url-in-block-comment',
         },
         {
-          messageId: 'add-ticket-url',
+          messageId: 'no-next-comment-line',
         },
         {
-          messageId: 'add-ticket-url',
+          messageId: 'no-ticket-url-in-block-comment',
         },
       ],
     },
