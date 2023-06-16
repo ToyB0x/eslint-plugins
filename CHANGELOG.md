@@ -1,3 +1,12 @@
+## 0.0.2 (2023-06-16)
+
+
+### Bug Fixes
+
+* handle block comment and line comment ([#9](https://github.com/ToyB0x/eslint-plugin-todo-ticket/issues/9)) ([c949294](https://github.com/ToyB0x/eslint-plugin-todo-ticket/commit/c9492949acf19708ceec2cd649b47212cf61b3f8))
+
+
+
 ## 0.0.1 (2023-06-15)
 
 
