@@ -121,6 +121,19 @@ ruleTester.run('rule: ticket-url', rule, {
         const x = () => 3
         `,
     },
+    {
+      name: 'block comment / line TODO comment',
+      code: `
+        /**
+         * NOTE:
+         * abc
+         */
+
+        // TODO: refactor123
+        // https://ticket.com/2,
+        const x = () => 2
+        `,
+    },
   ],
   invalid: [
     {

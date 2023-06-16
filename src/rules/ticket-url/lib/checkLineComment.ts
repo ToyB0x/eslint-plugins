@@ -23,7 +23,10 @@ export const checkLineComment = (
 
     // check if comment has "TODO:" and has "https://" in continuous comment lines
     const continuousCommentLines = getContinuousCommentLines(comment, comments)
-    if (!continuousCommentLines.some((c) => c.value.includes('https://'))) {
+    if (
+      continuousCommentLines.length > 0 &&
+      !continuousCommentLines.some((c) => c.value.includes('https://'))
+    ) {
       context.report({
         loc: comment.loc,
         messageId: 'no-ticket-url-in-continuous-comment-line',
@@ -48,12 +51,10 @@ const getContinuousCommentLines = (
 ): TSESTree.Comment[] => {
   const continuousLines: TSESTree.Comment[] = []
 
-  let currentCheckingComment = targetComment
   for (const comment of comments) {
-    if (!hasNextCommentLine(currentCheckingComment, comments)) break
-
+    if (comment.loc.start.line < targetComment.loc.start.line) continue
     continuousLines.push(comment)
-    currentCheckingComment = comment
+    if (!hasNextCommentLine(comment, comments)) break
   }
 
   return continuousLines
