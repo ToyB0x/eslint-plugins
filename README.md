@@ -2,8 +2,20 @@
 
 This is a rules to encourage the entry of ticket URLs in TODO comments.
 
-# TODO
-- OSSとしての体裁を整える
-- ruleのcallback関数を活用する
-- TODO, FIXME 等の文言を自由に設定できること(デフォルトは TODO, todo, Todo, Fixme 等)
-- TICKET のフォーマットを自由に設定できること(デフォルトは https://で始める文字列)
+## Rule Details
+
+This rule reports invalid TODO comment.
+
+✗ BAD: No ticket url
+```typescript
+
+// TODO: refactor
+const x = () => 1
+```
+
+✓ GOOD:: With ticket url
+```typescript
+// TODO: refactor
+// https://ticket.com/1,
+const x = () => 1
+```
