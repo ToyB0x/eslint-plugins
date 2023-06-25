@@ -1,3 +1,12 @@
+# 0.1.0 (2023-06-25)
+
+
+### Features
+
+* handle [@todo](https://github.com/todo) comment ([#12](https://github.com/ToyB0x/eslint-plugin-todo-ticket/issues/12)) ([4640bc2](https://github.com/ToyB0x/eslint-plugin-todo-ticket/commit/4640bc27cea721ffce7cdd64a352046615517ad6))
+
+
+
 ## 0.0.2 (2023-06-16)
 
 
