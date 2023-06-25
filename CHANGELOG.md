@@ -1,4 +1,13 @@
+## 0.1.2 (2023-06-25)
+
+### Refactor
+
+reduce NPM package size
+
+
 ## 0.1.1 (2023-06-25)
+
+### Dependencies
 
 update deps
 

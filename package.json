@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-todo-comment",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "This is a rule to encourage the entry of ticket URLs with TODO comments.",
   "main": "dist/index.js",
   "types": "./src/index.ts",
