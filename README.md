@@ -19,3 +19,25 @@ const x = () => 1
 // https://ticket.com/1,
 const x = () => 1
 ```
+
+## Installation
+### Add package
+```shell
+# npm
+npm i -D eslint-plugin-todo-comment
+
+# yarn
+yarn add -D eslint-plugin-todo-comment
+```
+
+### Update your eslint config
+```json
+{
+  "plugins": [
+    "todo-comment"
+  ],
+  "rules": {
+    "todo-comment/ticket-url": "error"
+  }
+}
+```
