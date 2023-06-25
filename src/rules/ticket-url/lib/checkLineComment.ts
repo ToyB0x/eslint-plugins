@@ -1,5 +1,6 @@
 import { TSESTree } from '@typescript-eslint/types'
 import { RuleContext } from '@typescript-eslint/utils/dist/ts-eslint'
+import { isContainTodoString } from './isContainTodoString'
 
 export const checkLineComment = (
   comments: TSESTree.Comment[],
@@ -10,7 +11,7 @@ export const checkLineComment = (
 ) => {
   comments.forEach((comment) => {
     if (comment.type !== 'Line') return
-    if (!comment.value.toLowerCase().includes('todo:')) return
+    if (!isContainTodoString(comment.value)) return
 
     // check if comment has "TODO:" and not has next comment line (possibly contains ticket url)
     if (!hasNextCommentLine(comment, comments)) {

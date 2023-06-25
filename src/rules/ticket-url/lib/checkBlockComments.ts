@@ -1,5 +1,6 @@
 import { TSESTree } from '@typescript-eslint/types'
 import { RuleContext } from '@typescript-eslint/utils/dist/ts-eslint'
+import { isContainTodoString } from './isContainTodoString'
 
 export const checkBlockComments = (
   comments: TSESTree.Comment[],
@@ -10,7 +11,7 @@ export const checkBlockComments = (
 
     // check if comment has "TODO:" and not has "https://"
     if (
-      comment.value.toLowerCase().includes('todo:') &&
+      isContainTodoString(comment.value) &&
       !comment.value.includes('https://')
     ) {
       context.report({

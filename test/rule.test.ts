@@ -24,6 +24,14 @@ ruleTester.run('rule: ticket-url', rule, {
         `,
     },
     {
+      name: 'line comment(lowercase: @todo)',
+      code: `
+        // @todo refactor
+        // https://ticket.com/1,
+        const x = () => 1
+        `,
+    },
+    {
       name: 'line comment with description line',
       code: `
         // TODO: refactor
@@ -63,6 +71,16 @@ ruleTester.run('rule: ticket-url', rule, {
       code: `
         /*
          * todo: refactor
+         * https://ticket.com/1,
+         */
+        const x = () => 1
+        `,
+    },
+    {
+      name: 'block comment(lowercase: @todo)',
+      code: `
+        /*
+         * @todo refactor
          * https://ticket.com/1,
          */
         const x = () => 1
@@ -161,6 +179,18 @@ ruleTester.run('rule: ticket-url', rule, {
       ],
     },
     {
+      name: 'line comment with ticket url(lowercase: @todo)',
+      code: `
+        // @todo refactor
+        const x = () => 1
+        `,
+      errors: [
+        {
+          messageId: 'no-next-comment-line',
+        },
+      ],
+    },
+    {
       name: 'multi line comment with ticket url',
       code: `
         // TODO: refactor
@@ -193,6 +223,21 @@ ruleTester.run('rule: ticket-url', rule, {
       code: `
         /*
          * todo: refactor
+         * description
+         */
+        const x = () => 1
+        `,
+      errors: [
+        {
+          messageId: 'no-ticket-url-in-block-comment',
+        },
+      ],
+    },
+    {
+      name: 'block comment without ticket url(lowercase: @todo)',
+      code: `
+        /*
+         * @todo refactor
          * description
          */
         const x = () => 1
