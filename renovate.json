@@ -9,5 +9,6 @@
       "automerge": true
     }
   ],
+  "rangeStrategy": "pin",
   "reviewers": ["ToyB0x"]
 }
