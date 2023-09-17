@@ -1,5 +1,5 @@
-import { TSESTree } from '@typescript-eslint/types'
-import { RuleContext } from '@typescript-eslint/utils/dist/ts-eslint'
+import { TSESTree } from '@typescript-eslint/typescript-estree'
+import type { RuleContext } from '@typescript-eslint/utils/ts-eslint'
 import { isContainTodoString } from './isContainTodoString'
 
 export const checkLineComment = (
@@ -7,7 +7,7 @@ export const checkLineComment = (
   context: RuleContext<
     'no-next-comment-line' | 'no-ticket-url-in-continuous-comment-line',
     never[]
-  >
+  >,
 ) => {
   comments.forEach((comment) => {
     if (comment.type !== 'Line') return
@@ -38,17 +38,17 @@ export const checkLineComment = (
 
 const hasNextCommentLine = (
   targetComment: TSESTree.Comment,
-  comments: TSESTree.Comment[]
+  comments: TSESTree.Comment[],
 ) => {
   // target コメントのlocを利用
   return comments.find(
-    (comment) => comment.loc.start.line === targetComment.loc.start.line + 1
+    (comment) => comment.loc.start.line === targetComment.loc.start.line + 1,
   )
 }
 
 const getContinuousCommentLines = (
   targetComment: TSESTree.Comment,
-  comments: TSESTree.Comment[]
+  comments: TSESTree.Comment[],
 ): TSESTree.Comment[] => {
   const continuousLines: TSESTree.Comment[] = []
 

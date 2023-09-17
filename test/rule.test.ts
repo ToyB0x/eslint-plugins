@@ -1,7 +1,11 @@
-import { ESLintUtils } from '@typescript-eslint/utils'
+import { RuleTester } from '@typescript-eslint/rule-tester'
 import { rule } from '../src/rules/ticket-url'
 
-const ruleTester = new ESLintUtils.RuleTester({
+// ref: https://typescript-eslint.io/packages/rule-tester/#with-specific-frameworks
+RuleTester.afterAll = () => undefined
+RuleTester.describe = () => undefined
+
+const ruleTester = new RuleTester({
   parser: '@typescript-eslint/parser',
 })
 

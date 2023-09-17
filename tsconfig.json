@@ -2,7 +2,8 @@
   "compilerOptions": {
     "strict": true,
     "target": "es2020",
-    "module": "commonjs",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "esModuleInterop": true
   }
 }
