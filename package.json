@@ -6,8 +6,7 @@
   "types": "./src/index.ts",
   "scripts": {
     "build": "tsup src/index.ts",
-    "test": "tsx ./test/rule.test.ts",
-    "test:watch": "tsx watch ./test/rule.test.ts",
+    "test": "yarn vitest",
     "typecheck": "tsc --noEmit",
     "release": "shipjs prepare"
   },
@@ -31,7 +30,6 @@
     "prettier": "3.0.3",
     "shipjs": "0.26.3",
     "tsup": "7.2.0",
-    "tsx": "3.12.10",
     "typescript": "5.2.2",
     "vitest": "0.34.4"
   }
