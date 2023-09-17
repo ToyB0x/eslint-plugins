@@ -8,5 +8,6 @@
       "matchUpdateTypes": ["minor", "patch", "pin"],
       "automerge": true
     }
-  ]
+  ],
+  "reviewers": ["ToyB0x"]
 }
