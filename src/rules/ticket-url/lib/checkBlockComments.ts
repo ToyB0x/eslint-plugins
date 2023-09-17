@@ -1,10 +1,10 @@
 import { TSESTree } from '@typescript-eslint/types'
-import { RuleContext } from '@typescript-eslint/utils/dist/ts-eslint'
+import { RuleContext } from '@typescript-eslint/utils/ts-eslint'
 import { isContainTodoString } from './isContainTodoString'
 
 export const checkBlockComments = (
   comments: TSESTree.Comment[],
-  context: RuleContext<'no-ticket-url-in-block-comment', never[]>
+  context: RuleContext<'no-ticket-url-in-block-comment', never[]>,
 ) => {
   comments.forEach((comment) => {
     if (comment.type !== 'Block') return

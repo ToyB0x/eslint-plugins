@@ -3,7 +3,7 @@ import { checkBlockComments, checkLineComment } from './lib'
 
 const createRule = ESLintUtils.RuleCreator(
   (name) =>
-    `https://github.com/ToyB0x/eslint-plugin-todo-comment/docs/rules/${name}`
+    `https://github.com/ToyB0x/eslint-plugin-todo-comment/docs/rules/${name}`,
 )
 
 export const rule = createRule({
@@ -20,7 +20,7 @@ export const rule = createRule({
   meta: {
     docs: {
       description: 'TODO comment must have ticket url.',
-      recommended: 'warn',
+      recommended: 'recommended',
     },
     messages: {
       'no-ticket-url-in-block-comment': 'Add ticket url in block comment.',
