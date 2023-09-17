@@ -1,5 +1,8 @@
 # 1.0.0 (2023-09-17)
 
+### Dependencies
+
+migrate @typescript-eslint to v6
 
 ### Bug Fixes
 
