@@ -1,3 +1,15 @@
+# 1.0.0 (2023-09-17)
+
+### Dependencies
+
+migrate @typescript-eslint to v6
+
+### Bug Fixes
+
+* test with vitest ([#47](https://github.com/ToyB0x/eslint-plugin-todo-ticket/issues/47)) ([98cf14c](https://github.com/ToyB0x/eslint-plugin-todo-ticket/commit/98cf14c6a0b7c691715ded5b49281a4a7c22326e))
+
+
+
 ## 0.1.2 (2023-06-25)
 
 ### Refactor
