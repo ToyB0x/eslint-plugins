@@ -1,12 +1,3 @@
-## 1.0.1 (2023-09-17)
-
-
-### Bug Fixes
-
-* release ci ([#49](https://github.com/ToyB0x/eslint-plugin-todo-ticket/issues/49)) ([19a8880](https://github.com/ToyB0x/eslint-plugin-todo-ticket/commit/19a88803b2a1c140df51fb6e7afcb21ae2b6d126))
-
-
-
 # 1.0.0 (2023-09-17)
 
 ### Dependencies
