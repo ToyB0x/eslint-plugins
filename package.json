@@ -28,7 +28,6 @@
     "@typescript-eslint/rule-tester": "6.7.0",
     "eslint": "8.49.0",
     "prettier": "3.0.3",
-    "shipjs": "0.26.3",
     "tsup": "7.2.0",
     "typescript": "5.2.2",
     "vitest": "0.34.4"
