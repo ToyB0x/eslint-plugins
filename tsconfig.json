@@ -4,6 +4,7 @@
     "target": "es2020",
     "module": "esnext",
     "moduleResolution": "bundler",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "skipLibCheck": true
   }
 }
