@@ -7,8 +7,7 @@
   "scripts": {
     "build": "tsup src/index.ts",
     "test": "yarn vitest",
-    "typecheck": "tsc --noEmit",
-    "release": "shipjs prepare"
+    "typecheck": "tsc --noEmit"
   },
   "author": "ToyB0x",
   "license": "MIT",
