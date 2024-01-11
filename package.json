@@ -16,12 +16,12 @@
   },
   "homepage": "https://github.com/ToyB0x/eslint-plugin-todo-ticket",
   "volta": {
-    "node": "20.10.0",
+    "node": "20.11.0",
     "yarn": "1.22.21"
   },
   "packageManager": "yarn@1.22.21",
   "devDependencies": {
-    "@types/node": "20.10.8",
+    "@types/node": "20.11.0",
     "@typescript-eslint/eslint-plugin": "6.18.1",
     "@typescript-eslint/parser": "6.18.1",
     "@typescript-eslint/rule-tester": "6.18.1",
