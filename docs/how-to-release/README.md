@@ -1,7 +1,7 @@
 # HOW TO RELEASE
 
+- Add changelog 
+  - `yarn changelog:add`
 - Bump packages.json version field
-- Create release from [github menu](https://github.com/ToyB0x/eslint-plugin-todo-comment/releases)
-  - create tab (same as package.json version)
-  - auto generate release note
-  - click publish button
+  - `yarn changelog:generate`
+- Run release CI from workflow dispatch
