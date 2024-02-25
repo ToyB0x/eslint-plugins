@@ -2,8 +2,7 @@ import { ESLintUtils } from '@typescript-eslint/utils'
 import { checkBlockComments, checkLineComment } from './lib'
 
 const createRule = ESLintUtils.RuleCreator(
-  (name) =>
-    `https://github.com/ToyB0x/eslint-plugin-todo-comment/docs/rules/${name}`,
+  (name) => `https://github.com/ToyB0x/eslint-plugins/docs/rules/${name}`,
 )
 
 export const rule = createRule({
