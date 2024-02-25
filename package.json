@@ -5,7 +5,8 @@
   "scripts": {
     "build": "turbo run build",
     "test": "turbo run test",
-    "typecheck": "turbo run typecheck"
+    "typecheck": "turbo run typecheck",
+    "changelog": "changeset"
   },
   "author": "ToyB0x",
   "license": "MIT",
@@ -24,5 +25,8 @@
   "packageManager": "yarn@1.22.21",
   "devDependencies": {
     "turbo": "1.12.4"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.27.1"
   }
 }
