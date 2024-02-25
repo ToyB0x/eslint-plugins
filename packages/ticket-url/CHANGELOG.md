@@ -1,5 +1,24 @@
-## 1.0.1 (2023-09-18)
+# eslint-plugin-todo-comment
 
+## 1.2.0 (2024-02-25)
+
+### Minor Changes
+
+- update deps
+- update repository to monorepo
+
+## 1.1.0 (2023-12-08)
+
+### Breaking Change
+
+- Drop Node 16 support
+
+## 1.0.2 (2023-09-18)
+
+### Bug Fixes
+fix release ci
+
+## 1.0.1 (2023-09-18)
 
 ### Bug Fixes
 fix release ci
@@ -72,6 +91,3 @@ update deps
 * add test ci ([#4](https://github.com/ToyB0x/eslint-plugin-todo-ticket/issues/4)) ([2a7be4e](https://github.com/ToyB0x/eslint-plugin-todo-ticket/commit/2a7be4ecc02ddc90b58811714b57a68bfae1cb0f))
 * setup project ([#3](https://github.com/ToyB0x/eslint-plugin-todo-ticket/issues/3)) ([399d517](https://github.com/ToyB0x/eslint-plugin-todo-ticket/commit/399d5173c56a1ab0b1acdb4fe180779a1218accd))
 * ship ci ([#5](https://github.com/ToyB0x/eslint-plugin-todo-ticket/issues/5)) ([de87ea8](https://github.com/ToyB0x/eslint-plugin-todo-ticket/commit/de87ea8819173cfd8fceb175eba5c45b9aeae2e8))
-
-
-
