@@ -13,7 +13,8 @@ type Options = [
 ]
 
 const createRule = ESLintUtils.RuleCreator(
-  (name) => `https://github.com/ToyB0x/eslint-plugins/docs/rules/${name}`,
+  (name) =>
+    `https://github.com/ToyB0x/eslint-plugins/packages/${name}/README.md`,
 )
 
 export const rule = createRule<Options, MessageIds>({
