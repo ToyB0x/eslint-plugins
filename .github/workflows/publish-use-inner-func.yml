@@ -1,14 +1,11 @@
-name: Publish Package to npmjs
-on:
-  release:
-    types: [published]
+name: Publish use-inner-func to npmjs
+on: workflow_dispatch
 jobs:
   build:
     name: Release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # Setup .npmrc file to publish to npmjs with env.NODE_AUTH_TOKEN
       - uses: actions/setup-node@v4
         with:
           node-version: '20.x'
@@ -16,5 +13,6 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn build
       - run: npm publish
+        working-directory: './packages/use-inner-func'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}

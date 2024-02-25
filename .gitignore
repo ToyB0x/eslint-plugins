@@ -134,3 +134,6 @@ dist
 
 # Mac
 .DS_store
+
+# turbo
+.turbo

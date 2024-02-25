@@ -1,0 +1,32 @@
+{
+  "name": "eslint-plugin-use-inner-func",
+  "version": "0.0.1",
+  "description": "This is a rule to encourage the use of specific func",
+  "main": "dist/index.js",
+  "types": "./src/index.ts",
+  "scripts": {
+    "build": "tsup src/index.ts",
+    "test": "yarn vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "author": "ToyB0x",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ToyB0x/eslint-plugins/issues"
+  },
+  "homepage": "https://github.com/ToyB0x/eslint-plugins",
+  "volta": {
+    "extends": "../../package.json"
+  },
+  "devDependencies": {
+    "@types/node": "20.11.20",
+    "@typescript-eslint/eslint-plugin": "7.0.2",
+    "@typescript-eslint/parser": "7.0.2",
+    "@typescript-eslint/rule-tester": "7.0.2",
+    "eslint": "8.57.0",
+    "prettier": "3.2.5",
+    "tsup": "8.0.2",
+    "typescript": "5.3.3",
+    "vitest": "1.3.1"
+  }
+}
