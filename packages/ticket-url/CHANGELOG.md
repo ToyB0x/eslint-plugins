@@ -1,5 +1,11 @@
 # eslint-plugin-todo-comment
 
+## 1.3.0
+
+### Minor Changes
+
+- use files option
+
 ## 1.2.1
 
 ### Patch Changes
