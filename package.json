@@ -6,7 +6,8 @@
     "build": "turbo run build",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck",
-    "changelog": "changeset"
+    "changelog:add": "changeset",
+    "changelog:generate": "changeset version"
   },
   "author": "ToyB0x",
   "license": "MIT",
