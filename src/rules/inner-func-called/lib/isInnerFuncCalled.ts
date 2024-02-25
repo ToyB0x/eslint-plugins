@@ -1,6 +1,6 @@
 import { TSESTree } from '@typescript-eslint/types'
 
-export const isInnerFuncUsed = (
+export const isInnerFuncCalled = (
   statements: TSESTree.Statement[],
   innerFunctions: string[],
 ) =>
