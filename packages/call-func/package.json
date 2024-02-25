@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-call-func",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This is a rule to encourage the call of specific func",
   "main": "dist/index.js",
   "types": "./src/index.ts",
