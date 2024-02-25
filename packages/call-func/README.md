@@ -4,8 +4,6 @@ This is a rule to encourage the use of specific func.
 
 ## Rule Details
 
-This rule reports invalid function usage.
-
 ✓ GOOD:: function called
 
 ```typescript
