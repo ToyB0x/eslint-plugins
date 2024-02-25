@@ -1,7 +1,7 @@
 import { ESLintUtils } from '@typescript-eslint/utils'
 import { isInnerFuncCalled } from './lib'
 
-type MessageIds = 'use-inner-func-in-outer-func'
+type MessageIds = 'call-inner-func-in-outer-func'
 
 type Options = [
   {
@@ -41,7 +41,13 @@ export const rule = createRule<Options, MessageIds>({
         context.report({
           node,
           loc: node.loc,
-          messageId: 'use-inner-func-in-outer-func',
+          messageId: 'call-inner-func-in-outer-func',
+          data: {
+            outerFunc: matchedOuterFunction,
+            innerFunc: functionSets.find(
+              (f) => f.outerFunction === matchedOuterFunction,
+            )?.innerFunction,
+          },
         })
       },
       // check arrow func
@@ -65,19 +71,25 @@ export const rule = createRule<Options, MessageIds>({
         context.report({
           node,
           loc: node.loc,
-          messageId: 'use-inner-func-in-outer-func',
+          messageId: 'call-inner-func-in-outer-func',
+          data: {
+            outerFunc: matchedOuterFunction,
+            innerFunc: functionSets.find(
+              (f) => f.outerFunction === matchedOuterFunction,
+            )?.innerFunction,
+          },
         })
       },
     }
   },
-  name: 'use-inner-func',
+  name: 'call-inner-func-in-outer-func',
   meta: {
     docs: {
       description: 'Inner Function must be called inside Outer Function',
       recommended: 'recommended',
     },
     messages: {
-      'use-inner-func-in-outer-func': 'Use inner function in outer function.',
+      'call-inner-func-in-outer-func': 'Call inner function in outer function.',
     },
     type: 'problem',
     schema: [

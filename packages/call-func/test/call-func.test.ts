@@ -1,5 +1,5 @@
 import { RuleTester } from '@typescript-eslint/rule-tester'
-import { rule } from '../src/use-inner-func'
+import { rule } from '../src/call-inner-func-in-outer-func'
 
 const ruleTester = new RuleTester({
   parser: '@typescript-eslint/parser',
@@ -83,7 +83,7 @@ ruleTester.run('rule: func-exist', rule, {
         `,
       errors: [
         {
-          messageId: 'use-inner-func-in-outer-func',
+          messageId: 'call-inner-func-in-outer-func',
         },
       ],
       options: [
@@ -99,7 +99,7 @@ ruleTester.run('rule: func-exist', rule, {
         `,
       errors: [
         {
-          messageId: 'use-inner-func-in-outer-func',
+          messageId: 'call-inner-func-in-outer-func',
         },
       ],
       options: [
@@ -115,7 +115,7 @@ ruleTester.run('rule: func-exist', rule, {
         `,
       errors: [
         {
-          messageId: 'use-inner-func-in-outer-func',
+          messageId: 'call-inner-func-in-outer-func',
         },
       ],
       options: [

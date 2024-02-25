@@ -1,4 +1,4 @@
-# eslint-plugin-use-inner-func
+# eslint-plugin-call-func
 
 This is a rule to encourage the use of specific func.
 
@@ -25,20 +25,20 @@ function outer() {
 ### Add package
 ```shell
 # npm
-npm i -D eslint-plugin-use-inner-func
+npm i -D eslint-plugin-call-func
 
 # yarn
-yarn add -D eslint-plugin-use-inner-func
+yarn add -D eslint-plugin-call-func
 ```
 
 ### Update your eslint config
 ```json
 {
   "plugins": [
-    "use-inner-func"
+    "call-func"
   ],
   "rules": {
-    "use-inner-func/use-inner-func": "error"
+    "call-func/call-func": "error"
   }
 }
 ```

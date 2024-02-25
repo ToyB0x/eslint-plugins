@@ -1,4 +1,4 @@
-name: Publish use-inner-func to npmjs
+name: Publish call-func to npmjs
 on: workflow_dispatch
 jobs:
   build:
@@ -13,6 +13,6 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn build
       - run: npm publish
-        working-directory: './packages/use-inner-func'
+        working-directory: './packages/call-func'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
