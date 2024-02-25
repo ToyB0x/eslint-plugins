@@ -25,8 +25,9 @@ export const rule = createRule<Options, MessageIds>({
       FunctionDeclaration(node) {
         if (node.id === null) return // arrow function
 
+        const functionName = node.id.name
         const matchedOuterFunction = functionSets.find(
-          (f) => f.outerFunction === node.id.name,
+          (f) => f.outerFunction === functionName,
         )?.outerFunction
         if (!matchedOuterFunction) return // not target function
 
