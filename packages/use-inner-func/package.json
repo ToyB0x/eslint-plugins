@@ -4,6 +4,9 @@
   "description": "This is a rule to encourage the use of specific func",
   "main": "dist/index.js",
   "types": "./src/index.ts",
+  "files": [
+    "dist/**"
+  ],
   "scripts": {
     "build": "tsup src/index.ts",
     "test": "yarn vitest",
