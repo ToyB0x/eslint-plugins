@@ -52,7 +52,15 @@ yarn add -D eslint-plugin-call-func
 {
   "plugins": ["call-func"],
   "rules": {
-    "call-func/call-inner-func-in-outer-func": "error"
+    "call-func/call-inner-func-in-outer-func": [
+      "error",
+      {
+        "functionSets": [
+          { "outerFunction": "action", "innerFunction": "checkPermissions" },
+          { "outerFunction": "loader", "innerFunction": "checkPermissions" }
+        ]
+      }
+    ]
   }
 }
 ```
