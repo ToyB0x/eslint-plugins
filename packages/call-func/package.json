@@ -1,7 +1,7 @@
 {
-  "name": "eslint-plugin-use-inner-func",
+  "name": "eslint-plugin-call-func",
   "version": "0.0.1",
-  "description": "This is a rule to encourage the use of specific func",
+  "description": "This is a rule to encourage the call of specific func",
   "main": "dist/index.js",
   "types": "./src/index.ts",
   "files": [
