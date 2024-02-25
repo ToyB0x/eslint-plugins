@@ -1,4 +1,4 @@
-name: Publish ticket-url to npmjs
+name: Publish todo-comment to npmjs
 on: workflow_dispatch
 jobs:
   build:
@@ -13,6 +13,6 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn build
       - run: npm publish
-        working-directory: './packages/ticket-url'
+        working-directory: './packages/todo-comment'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
