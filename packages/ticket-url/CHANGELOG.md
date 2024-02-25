@@ -1,5 +1,11 @@
 # eslint-plugin-todo-comment
 
+## 1.4.0
+
+### Minor Changes
+
+- reduce bundle size
+
 ## 1.3.1
 
 ### Patch Changes
