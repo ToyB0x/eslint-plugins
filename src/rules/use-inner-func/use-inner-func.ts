@@ -5,8 +5,10 @@ type MessageIds = 'use-inner-func-in-outer-func'
 
 type Options = [
   {
-    outerFunctions: string[]
-    innerFunctions: string[]
+    functionSets: {
+      outerFunction: string
+      innerFunction: string
+    }[]
   },
 ]
 
@@ -17,16 +19,23 @@ const createRule = ESLintUtils.RuleCreator(
 export const rule = createRule<Options, MessageIds>({
   create(context) {
     const [options] = context.options
-    const outerFunctions = options.outerFunctions || []
-    const innerFunctions = options.innerFunctions || []
+    const functionSets = options.functionSets || []
 
     return {
       FunctionDeclaration(node) {
         if (node.id === null) return // arrow function
-        if (!outerFunctions.includes(node.id.name)) return // not target function
+
+        const functionName = node.id.name
+        const matchedOuterFunction = functionSets.find(
+          (f) => f.outerFunction === functionName,
+        )?.outerFunction
+        if (!matchedOuterFunction) return // not target function
 
         // 対象のOuter関数名である場合、指定された内部関数が呼ばれているかチェック
-        if (isInnerFuncCalled(node.body.body, innerFunctions)) return
+        if (
+          isInnerFuncCalled(node.body.body, matchedOuterFunction, functionSets)
+        )
+          return
 
         context.report({
           node,
@@ -36,8 +45,10 @@ export const rule = createRule<Options, MessageIds>({
       },
       // check arrow func
       VariableDeclaration(node) {
-        if (!outerFunctions.includes((node.declarations[0].id as any).name))
-          return
+        const matchedOuterFunction = functionSets.find(
+          (f) => f.outerFunction === (node.declarations[0].id as any).name,
+        )?.outerFunction
+        if (!matchedOuterFunction) return // not target function
 
         if (node.declarations[0].init?.type !== 'ArrowFunctionExpression')
           return
@@ -45,7 +56,10 @@ export const rule = createRule<Options, MessageIds>({
         const { init } = node.declarations[0]
         if (init.body.type !== 'BlockStatement') return
 
-        if (isInnerFuncCalled(init.body.body, innerFunctions)) return
+        if (
+          isInnerFuncCalled(init.body.body, matchedOuterFunction, functionSets)
+        )
+          return
 
         context.report({
           node,
@@ -69,26 +83,26 @@ export const rule = createRule<Options, MessageIds>({
       {
         type: 'object',
         properties: {
-          outerFunctions: {
+          functionSets: {
             type: 'array',
             items: [
               {
-                type: 'string',
-              },
-            ],
-          },
-          innerFunctions: {
-            type: 'array',
-            items: [
-              {
-                type: 'string',
+                type: 'object',
+                properties: {
+                  outerFunction: {
+                    type: 'string',
+                  },
+                  innerFunction: {
+                    type: 'string',
+                  },
+                },
+                required: ['outerFunction', 'innerFunction'],
               },
             ],
           },
         },
-        required: ['outerFunctions', 'innerFunctions'],
       },
     ],
   },
-  defaultOptions: [{ outerFunctions: [], innerFunctions: [] }],
+  defaultOptions: [{ functionSets: [] }],
 })
