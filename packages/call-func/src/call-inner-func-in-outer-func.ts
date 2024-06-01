@@ -1,5 +1,5 @@
 import { ESLintUtils } from '@typescript-eslint/utils'
-import { isInnerFuncCalled } from './lib'
+import { isInnerFuncCalled, isInnerFuncEqualToOuterVariable } from './lib'
 
 type MessageIds = 'call-inner-func-in-outer-func'
 
@@ -52,30 +52,49 @@ export const rule = createRule<Options, MessageIds>({
       },
       // check arrow func
       VariableDeclaration(node) {
-        const matchedOuterFunction = functionSets.find(
-          (f) => f.outerFunction === (node.declarations[0].id as any).name,
+        const matchedOuterVariable = functionSets.find(
+          (f) =>
+            node.declarations[0].id.type === 'Identifier' &&
+            f.outerFunction === node.declarations[0].id.name,
         )?.outerFunction
-        if (!matchedOuterFunction) return // not target function
+        if (!matchedOuterVariable) return // not target function
 
-        if (node.declarations[0].init?.type !== 'ArrowFunctionExpression')
-          return
+        // matchedVariable is Function
+        if (node.declarations[0].init?.type === 'CallExpression') {
+          const { init } = node.declarations[0]
+          if (
+            isInnerFuncEqualToOuterVariable(
+              init,
+              matchedOuterVariable,
+              functionSets,
+            )
+          )
+            return
+        }
 
-        const { init } = node.declarations[0]
-        if (init.body.type !== 'BlockStatement') return
+        // matchedVariable is Arrow Function
+        if (node.declarations[0].init?.type === 'ArrowFunctionExpression') {
+          const { init } = node.declarations[0]
+          if (init.body.type !== 'BlockStatement') return
 
-        if (
-          isInnerFuncCalled(init.body.body, matchedOuterFunction, functionSets)
-        )
-          return
+          if (
+            isInnerFuncCalled(
+              init.body.body,
+              matchedOuterVariable,
+              functionSets,
+            )
+          )
+            return
+        }
 
         context.report({
           node,
           loc: node.loc,
           messageId: 'call-inner-func-in-outer-func',
           data: {
-            outerFunc: matchedOuterFunction,
+            outerFunc: matchedOuterVariable,
             innerFunc: functionSets.find(
-              (f) => f.outerFunction === matchedOuterFunction,
+              (f) => f.outerFunction === matchedOuterVariable,
             )?.innerFunction,
           },
         })
