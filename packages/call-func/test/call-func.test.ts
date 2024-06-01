@@ -43,6 +43,24 @@ ruleTester.run('rule: func-exist', rule, {
       ],
     },
     {
+      name: 'innerFunction equal to outerFunction (arrow func)',
+      code: 'const outer = inner()',
+      options: [
+        {
+          functionSets: [{ outerFunction: 'outer', innerFunction: 'inner' }],
+        },
+      ],
+    },
+    {
+      name: 'innerFunction (with args) equal to outerFunction (arrow func)',
+      code: `const outer = inner({ args: 'args' })`,
+      options: [
+        {
+          functionSets: [{ outerFunction: 'outer', innerFunction: 'inner' }],
+        },
+      ],
+    },
+    {
       name: 'no outerFunction exist(arrow func)',
       code: `
         const notOuter = () => {
@@ -97,6 +115,18 @@ ruleTester.run('rule: func-exist', rule, {
           notInnerFunc()
         }
         `,
+      errors: [
+        {
+          messageId: 'call-inner-func-in-outer-func',
+        },
+      ],
+      options: [
+        { functionSets: [{ outerFunction: 'outer', innerFunction: 'inner' }] },
+      ],
+    },
+    {
+      name: 'error when outerFunction not equal to innerFunction(arrow func)',
+      code: 'const outer = notInnerFunc()',
       errors: [
         {
           messageId: 'call-inner-func-in-outer-func',
