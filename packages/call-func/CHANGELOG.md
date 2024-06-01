@@ -1,5 +1,11 @@
 # eslint-plugin-call-func
 
+## 0.1.0
+
+### Minor Changes
+
+- Added functionality to allow variable assignment
+
 ## 0.0.2
 
 ### Patch Changes

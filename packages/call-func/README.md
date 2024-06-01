@@ -4,13 +4,27 @@ This is a rule to encourage the use of specific func.
 
 ## Rule Details
 
-✓ GOOD:: function called
+✓ GOOD:: function called in outer function
 
 ```typescript
 function outer() {
   checkPermissions() // <-- This rule checks if this function is called.
   someFunc()
 }
+```
+
+✓ GOOD:: function called with variable assignment
+
+```typescript
+const runFunctionWithCheckPermission = (fn: () => void) => {
+  checkPermissions()
+  fn()
+}
+
+// ref: https://remix.run/docs/en/main/route/loader
+export const loader = runFunctionWithCheckPermission(() => { // <-- This rule also can checks if specific wrapper func is used.
+  console.log('function called after check permission')
+})
 ```
 
 ✗ BAD: No function called
@@ -32,6 +46,11 @@ This is useful when you want to run simple code within a framework that exports 
 export const loader = () => {
   checkPermissions()
 }
+
+// Or you can use a wrapper function to ensure that the permission check is performed.
+export const loader = runFunctionWithCheckPermission(() => {
+  console.log('function called after check permission')
+})
 ```
 
 ## Installation
