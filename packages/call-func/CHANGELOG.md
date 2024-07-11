@@ -1,5 +1,11 @@
 # eslint-plugin-call-func
 
+## 0.1.1
+
+### Patch Changes
+
+- fix document link
+
 ## 0.1.0
 
 ### Minor Changes
