@@ -3,7 +3,7 @@ import { checkBlockComments, checkLineComment } from './lib'
 
 const createRule = ESLintUtils.RuleCreator(
   (name) =>
-    `https://github.com/ToyB0x/eslint-plugins/packages/todo-comment/README.md`,
+    `https://github.com/ToyB0x/eslint-plugins/blob/main/packages/todo-comment/README.md`,
 )
 
 export const rule = createRule({
