@@ -14,7 +14,7 @@ type Options = [
 
 const createRule = ESLintUtils.RuleCreator(
   (name) =>
-    `https://github.com/ToyB0x/eslint-plugins/packages/call-func/README.md`,
+    `https://github.com/ToyB0x/eslint-plugins/blob/main/packages/call-func/README.md`,
 )
 
 export const rule = createRule<Options, MessageIds>({
