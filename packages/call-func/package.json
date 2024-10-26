@@ -31,7 +31,7 @@
     "@typescript-eslint/rule-tester": "7.18.0",
     "eslint": "8.57.1",
     "prettier": "3.3.3",
-    "tsup": "8.3.4",
+    "tsup": "8.3.5",
     "typescript": "5.6.3",
     "vitest": "2.1.3"
   }
