@@ -30,7 +30,7 @@
     "@typescript-eslint/parser": "7.18.0",
     "@typescript-eslint/rule-tester": "7.18.0",
     "eslint": "8.57.1",
-    "prettier": "3.5.2",
+    "prettier": "3.5.3",
     "tsup": "8.4.0",
     "typescript": "5.8.2",
     "vitest": "3.0.7"
