@@ -22,13 +22,13 @@
     "extends": "../../package.json"
   },
   "dependencies": {
-    "@typescript-eslint/utils": "7.18.0"
+    "@typescript-eslint/utils": "8.56.0"
   },
   "devDependencies": {
     "@types/node": "22.13.10",
-    "@typescript-eslint/eslint-plugin": "7.18.0",
-    "@typescript-eslint/parser": "7.18.0",
-    "@typescript-eslint/rule-tester": "7.18.0",
+    "@typescript-eslint/eslint-plugin": "8.56.0",
+    "@typescript-eslint/parser": "8.56.0",
+    "@typescript-eslint/rule-tester": "8.56.0",
     "eslint": "8.57.1",
     "prettier": "3.8.1",
     "tsup": "8.5.1",
