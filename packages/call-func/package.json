@@ -29,7 +29,7 @@
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
     "@typescript-eslint/rule-tester": "7.18.0",
-    "eslint": "8.57.1",
+    "eslint": "10.0.1",
     "prettier": "3.8.1",
     "tsup": "8.5.1",
     "typescript": "5.8.2",
