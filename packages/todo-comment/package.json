@@ -32,7 +32,7 @@
     "eslint": "8.57.1",
     "prettier": "3.9.6",
     "tsup": "8.5.1",
-    "typescript": "5.8.2",
+    "typescript": "7.0.2",
     "vitest": "3.2.7"
   }
 }
